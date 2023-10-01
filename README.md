@@ -64,3 +64,54 @@ The Binary Coded Decimal Adder (BCDA) is designed to add two 4-bit Binary Coded 
 - `cout` is the carry-out, which indicates whether there was a carry during BCD addition.
 
 This circuit uses two Full Adders and some additional logic to perform BCD addition. It is useful for applications involving decimal arithmetic.
+
+Certainly! Here are entries for each of the Verilog modules with a format similar to the example you provided:
+
+### 7. 2:1 Multiplexer (1-bit)
+
+The 2x1 Multiplexer (mux_2x1) is a digital circuit designed for selecting one of two input signals based on a select signal.
+
+- `sel`: The select signal. When `sel` is high (1), the output 'out' corresponds to input 'b,' otherwise it corresponds to input 'a.'
+- `a` and `b`: The two input signals to be selected from.
+- `out`: The output signal, which carries the value of either 'a' or 'b' depending on the value of 'sel.'
+
+This module is commonly used for data switching, where it routes one of two inputs to the output based on the select signal.
+
+### 8. 4:1 Multiplexer (1-bit)
+
+The 4x1 Multiplexer (mux_4x1) is a digital circuit used to select one of four input signals based on a 2-bit select signal.
+
+- `sel[1:0]`: The 2-bit select signal. It determines which of the four inputs ('a,' 'b,' 'c,' or 'd') gets routed to the output 'out.'
+- `a`, `b`, `c`, and `d`: The four input signals to choose from.
+- `out`: The output signal, which carries the value of the selected input.
+
+This multiplexer combines two 2x1 Multiplexers (mux_2x1) to achieve the selection of one of the four inputs based on the 2-bit control signal.
+
+### 9. 8:1 Multiplexer (1-bit)
+
+The 8x1 Multiplexer (mux_8x1) is a digital circuit designed to select one of eight input signals based on a 3-bit select signal.
+
+- `sel[2:0]`: The 3-bit select signal. It determines which of the eight inputs ('a' to 'h') gets routed to the output 'out.'
+- `a`, `b`, `c`, `d`, `e`, `f`, `g`, and `h`: The eight input signals to choose from.
+- `out`: The output signal, which carries the value of the selected input.
+
+This multiplexer routes one of the eight inputs to the output based on the binary value of the 3-bit select signal. It's versatile for data routing and signal selection.
+
+### 10. 1:4 Demultiplexer (1-bit)
+
+The 1x4 Demultiplexer (demux_1x4) is a digital circuit that takes a single input signal ('in') and distributes it to one of four output lines based on a 2-bit select signal.
+
+- `sel[1:0]`: The 2-bit select signal. It determines which of the four output lines receives the input signal.
+- `in`: The input signal to be distributed.
+- `out[3:0]`: The four output lines. One of them receives the input signal based on the select signal.
+
+The 1x4 Demultiplexer operates as the opposite of a multiplexer, routing the input signal to one of the four output lines based on the select signal. It's commonly used for data distribution.
+
+### 11. 3:8 Decoder
+
+The 3x8 Decoder (decoder_3x8) is a digital circuit that takes a 3-bit input signal ('in') and activates one of eight output lines based on the input value.
+
+- `in[2:0]`: The 3-bit input signal, determining which of the eight output lines should be active.
+- `out[7:0]`: The eight output lines. Only one of them is activated (set to logic high) based on the input value.
+
+The 3x8 Decoder is used to implement binary-to-decimal or binary-to-octal conversions. It activates a specific output line corresponding to the binary input value.
